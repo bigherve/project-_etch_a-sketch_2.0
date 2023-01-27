@@ -10,12 +10,22 @@ function makeGrid(rows, columns) {
     }
 }
 
+function random(min, max) {
+    const num = Math.floor(Math.random() * (max - min)) + min;
+    return num;
+}
+
+function randomColor() {
+    return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+}
+
 makeGrid(40, 40);
 
 const fun = document.querySelectorAll('.grid-square');
 
 fun.forEach((item) => {
-    item.addEventListener('mouseenter', (e) => {
-        e.target.style.background = 'hotpink';
+    item.addEventListener('mouseenter', function(e) {
+        const newBgColor = randomColor();
+        e.target.style.setProperty('background-color', newBgColor);
     });
 });
