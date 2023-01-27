@@ -11,8 +11,7 @@ function makeGrid(rows, columns) {
 }
 
 function random(min, max) {
-    const num = Math.floor(Math.random() * (max - min)) + min;
-    return num;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function randomColor() {
