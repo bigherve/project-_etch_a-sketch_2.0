@@ -1,10 +1,31 @@
 const container = document.querySelector('#container');
+const input = document.querySelector('#input');
 
-function makeGrid(rows, columns) {
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-columns', columns);
-    for (let i = 0; i < rows * columns; i++) {
-        let div = document.createElement('div');
+function makeGrid() {
+    for (let i = 0; i < 265; i++) {
+        const div = document.createElement('div');
+        div.className = 'grid-square';
+        container.appendChild(div);
+    }
+}
+
+function changeGridSize() {
+    container.textContent = '';
+    container.style.setProperty(
+        'grid-template-rows',
+        `repeat(${input.value}, 1fr)`
+    );
+    container.style.setProperty(
+        'grid-template-columns',
+        `repeat(${input.value}, 1fr)`
+    );
+
+    if (input.value > 100) {
+        alert('Too big please select a number smaller than 100');
+    }
+
+    for (let i = 0; i < input.value * input.value; i++) {
+        const div = document.createElement('div');
         div.className = 'grid-square';
         container.appendChild(div);
     }
@@ -18,13 +39,12 @@ function randomColor() {
     return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
 }
 
-makeGrid(40, 40);
+function changeColors(e) {
+    const newBgColor = randomColor();
+    e.target.style.setProperty('background-color', newBgColor);
+}
 
-const fun = document.querySelectorAll('.grid-square');
+container.addEventListener('mouseover', changeColors);
+input.addEventListener('change', changeGridSize);
 
-fun.forEach((item) => {
-    item.addEventListener('mouseenter', function(e) {
-        const newBgColor = randomColor();
-        e.target.style.setProperty('background-color', newBgColor);
-    });
-});
+makeGrid();

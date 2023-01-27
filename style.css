@@ -1,18 +1,13 @@
-:root {
-    --grid-rows: 1;
-    --grid-columns: 1;
-}
-
 body {
     text-align: center;
     font-family: impact;
-    background: violet;
+    background: #f00;
     color: #000;
     box-sizing: border-box;
 }
 
 label {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 input {
@@ -20,9 +15,9 @@ input {
 }
 
 button {
-    background-color: #d1d4d6;
-    border: 1px solid #000;
-    color: #000;
+    background-color: #303134;
+    border: 1px solid c;
+    color: #e8eaed;
     font-size: 15px;
     margin: 10px 5px;
     padding: 0 15px;
@@ -34,18 +29,22 @@ button:hover {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     background-color: #222323;
     border: 1px solid #222323;
-    color: #aaa;
+    color: #ddd;
 }
 
 #container {
     display: inline-grid;
-    background: #fff;
-    grid-template-rows: repeat(var(--grid-rows), 15px);
-    grid-template-columns: repeat(var(--grid-columns), 15px);
+    grid-template-rows: repeat(16, 2fr);
+    grid-template-columns: repeat(16, 2fr);
+    height: 550px;
+    width: 550px;
+    border: 10px solid #000;
+    margin: 25px 45px;
 }
 
 .grid-square {
     border: 1px solid #ddd;
+    background-color: #fff;
     justify-content: center;
 }
 
@@ -63,9 +62,4 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
     -moz-appearance: textfield;
-}
-
-.block {
-    border: 1px solid #000;
-    background-color: #fff;
 }
