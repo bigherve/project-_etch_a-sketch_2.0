@@ -6,19 +6,35 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    text-shadow: 5px 5px hotpink;
+}
+
 label {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 25px;
+    text-shadow: 4px 4px hotpink;
+}
+
+#top-headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 5px;
 }
 
 input {
-    border: 1px solid #000;
+    text-align: center;
+    border: 3px solid hotpink;
+    outline: 4px solid #000;
+    width: 250px;
 }
 
 button {
     background-color: #303134;
-    border: 1px solid #ddcc;
-    color: #e8eaed;
+    border: 1px solid #dddd;
+    color: hotpink;
     font-size: 15px;
     margin: 10px 5px;
     padding: 0 15px;
@@ -27,10 +43,10 @@ button {
 }
 
 button:hover {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 6px hotpink;
     background-color: #222323;
     border: 1px solid #222323;
-    color: #ddd;
+    color: hotpink;
 }
 
 #container {
@@ -40,6 +56,7 @@ button:hover {
     height: 550px;
     width: 550px;
     border: 10px solid #000;
+    box-shadow: 6px 7px hotpink;
     margin: 25px 45px;
 }
 
@@ -50,7 +67,7 @@ button:hover {
 }
 
 
-/* Chrome, Safari, Edge, Opera */
+/* remove arrows Chrome, Safari, Edge, Opera */
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -59,7 +76,7 @@ input::-webkit-inner-spin-button {
 }
 
 
-/* Firefox */
+/* remove arrows Firefox */
 
 input[type='number'] {
     -moz-appearance: textfield;
