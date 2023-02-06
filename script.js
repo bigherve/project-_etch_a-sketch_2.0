@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+const resetBtn = document.querySelector('#btn');
 const input = document.querySelector('#input');
 
 function makeGrid() {
@@ -22,6 +23,7 @@ function changeGridSize() {
 
     if (input.value > 100) {
         alert('Too big please select a number smaller than 100');
+        resetGrid();
     }
 
     for (let i = 0; i < input.value * input.value; i++) {
@@ -29,6 +31,15 @@ function changeGridSize() {
         div.className = 'grid-square';
         container.appendChild(div);
     }
+}
+
+function resetGrid() {
+    container.textContent = '';
+    input.value = '';
+    input.textContent = '';
+    container.style.setProperty('grid-template-rows', 'repeat(16, 1fr)');
+    container.style.setProperty('grid-template-columns', 'repeat(16, 1fr)');
+    makeGrid();
 }
 
 function random(min, max) {
@@ -44,7 +55,8 @@ function changeColors(e) {
     e.target.style.setProperty('background-color', newBgColor);
 }
 
-container.addEventListener('mouseover', changeColors);
+resetBtn.addEventListener('click', resetGrid);
 input.addEventListener('change', changeGridSize);
+container.addEventListener('mouseover', changeColors);
 
 makeGrid();

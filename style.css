@@ -8,6 +8,7 @@ body {
 
 label {
     font-weight: 700;
+    font-size: 25px;
 }
 
 input {
@@ -16,7 +17,7 @@ input {
 
 button {
     background-color: #303134;
-    border: 1px solid c;
+    border: 1px solid #ddcc;
     color: #e8eaed;
     font-size: 15px;
     margin: 10px 5px;
