@@ -8,12 +8,16 @@ body {
 
 h1 {
     text-shadow: 5px 5px hotpink;
+    padding: 2px;
+    margin: 2px;
 }
 
 label {
     font-weight: 500;
     font-size: 25px;
     text-shadow: 4px 4px hotpink;
+    padding: 2px;
+    margin: 2px;
 }
 
 #top-headline {
@@ -29,6 +33,8 @@ input {
     border: 3px solid hotpink;
     outline: 4px solid #000;
     width: 250px;
+    padding: 2px;
+    margin: 2px;
 }
 
 button {
@@ -55,9 +61,11 @@ button:hover {
     grid-template-columns: repeat(16, 2fr);
     height: 550px;
     width: 550px;
-    border: 10px solid #000;
+    border: 5px solid #000;
     box-shadow: 6px 7px hotpink;
     margin: 25px 45px;
+    padding: 5px;
+    margin: 2px;
 }
 
 .grid-square {
